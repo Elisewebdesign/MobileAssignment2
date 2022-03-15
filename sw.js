@@ -1,7 +1,5 @@
 var cacheName = 'hellopwa';
 var filesToCache = [
-  '/',
-  '/?',
   'index.html'
 ];
 
