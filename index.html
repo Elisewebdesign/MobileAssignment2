@@ -1,25 +1,316 @@
-<head>
-    <link rel="manifest" href="/magic.webmanifest">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    <meta name="theme-color" content="white" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Magic 8 Ball">
-    <meta name="msapplication-TileImage" content="/img/ms144.png">
-    <meta name="msapplication-TileColor" content="#FFFFFF">
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <!-- Meta Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JQuery / Materialize CSS + JavaScript imports -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+    <!-- Add a Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Styling -->
+    <style>
+        #container {
+            padding-left: 300px;
+
+        }
+
+        @media only screen and (max-width : 992px) {
+            #container {
+                padding-left: 0px;
+            }
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12pt;
+        }
+
+        h6 {
+            font-size: 12pt;
+        }
+
+        h5 {
+            font-size: 14pt;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 20pt;
+            font-weight: 500;
+            color: midnightblue;
+        }
+
+        h3 {
+            font-size: 26pt;
+            font-weight: 600;
+            text-align: center;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        h2 {
+            font-size: 16pt;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        hr {
+            display: block;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: inset;
+            border-width: 1px;
+            border-color: rgb(235, 235, 235);
+        }
+
+        #title {
+            background-color: #F8CA27;
+            text-align: center;
+
+        }
+
+        #innerSections {
+            padding: 30px;
+            margin-left: 2px;
+        }
+
+        #slide-out {
+            padding: 20px;
+        }
+
+        #menuFormat {
+            padding: 15px;
+        }
+
+        #bullet {
+            display: list-item;
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+    </style>
 </head>
 
+
 <body>
-    <form id="magic8ball">
-        <h1>Magic 8 ball</h1>
-        <h2>the 8 ball knows</h2>
-        <p>Ask me anything I will answer.</p>
-        <input id="question" placeholder="enter a question" />
-        <button type="submit">Ask</button>
-        <p id="answer">If you had asked The answer would be here</p>
-    </form>
-    <script src="js/main.js" type="module"></script>
+    <div id="container">
+
+        <!-- Create Side Bar Menu -->
+        <div id="menu">
+
+            <ul id="slide-out" class="side-nav fixed show-on-large-only">
+                <li><a href="#title">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li class="no-padding">
+                    <ul class="collapsible collapsible-accordion">
+                        <li>
+                            <a class="collapsible-header">Experience<i class="material-icons">arrow_drop_down</i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#digitalconsultants">Digital Consultants</a></li>
+                                    <li><a href="#UXDSA">UXDSA</a></li>
+                                    <li><a href="#fortinos">Fortinos</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+        </div>
+
+        <div id="content">
+
+            <!-- Hamburger Menu -->
+            <div id="menuFormat">
+                <a href="#" data-activates="slide-out" class="button-collapse hide-on-large-only"><i
+                        class="material-icons">menu</i></a>
+            </div>
+
+            <!-- Title Section -->
+            <section id="title">
+                <br />
+                <br />
+                <br />
+                <h3>Elise VanderWindt</h3>
+                <h2>UX Designer</h2>
+
+                <!-- Add an Image from my Wix Website -->
+                <wix-image id="img-comp-kuq2dhwl"
+                    data-image-info="{&quot;containerId&quot;:&quot;comp-kuq2dhwl&quot;,&quot;alignType&quot;:&quot;center&quot;,&quot;parallaxSpeed&quot;:1.5,&quot;sourceSets&quot;:[],&quot;imageData&quot;:{&quot;uri&quot;:&quot;0a3ebf_00f813aa4e764e3595c9e7121de014d2~mv2.png&quot;,&quot;width&quot;:1920,&quot;height&quot;:1442,&quot;alt&quot;:&quot;&quot;,&quot;focalPoint&quot;:null}}"
+                    data-has-ssr-src=""
+                    data-src="https://static.wixstatic.com/media/0a3ebf_00f813aa4e764e3595c9e7121de014d2~mv2.png/v1/fill/w_848,h_636,al_c,usm_0.66_1.00_0.01,enc_auto/0a3ebf_00f813aa4e764e3595c9e7121de014d2~mv2.png">
+
+                    <picture><img
+                            src="https://static.wixstatic.com/media/0a3ebf_00f813aa4e764e3595c9e7121de014d2~mv2.png/v1/fill/w_848,h_636,al_c,usm_0.66_1.00_0.01,enc_auto/0a3ebf_00f813aa4e764e3595c9e7121de014d2~mv2.png"
+                            alt="" style="object-fit: cover; object-position: 50% 50%; width: 100%; max-width: 800px;">
+                    </picture>
+                </wix-image>
+
+                <br />
+                <br />
+                <br />
+            </section>
+
+            <!-- Add some padding -->
+            <div id="innerSections">
+
+                <!-- About Section -->
+                <section id="about">
+                    <br />
+                    <br />
+                    <h4>About</h4>
+                    <p> My name is Elise VanderWindt, and I am a designer and digital marketing specialist from Ontario,
+                        Canada. I have experience conducting user research, designing websites, and creating custom
+                        graphics
+                        for clients. I am currently enrolled in my third year of the User Experience Design program at
+                        Wilfrid Laurier University. I am studying user experience design because I am excited about
+                        creating
+                        new solutions to common problems and improving existing products/services so that they better
+                        meet
+                        user needs. I am also interested in visual art, and I spend a lot of my spare time painting and
+                        sketching. </p>
+                    <br />
+                    <!-- Add an Image of myself -->
+                    <img src="https://static.wixstatic.com/media/0a3ebf_e900605f19654dbf8104b5acd64510e4~mv2.png/v1/crop/x_57,y_1188,w_2805,h_2748/fill/w_766,h_750,fp_0.50_0.50,usm_0.66_1.00_0.01,enc_auto/0a3ebf_e900605f19654dbf8104b5acd64510e4~mv2.png"
+                        style="max-width:270px;max-height:300px;">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </section>
+
+                <hr>
+                <br />
+                <br />
+
+                <!-- Education Section -->
+                <section id="education">
+                    <h4>Education</h4>
+                    <br />
+                    <h5>Wilfrid Laurier University</h5>
+                    <p>Bachelor of Design</p>
+                    <h6>Brantford, ON</h6>
+                    <h6>2019 — Present</h6>
+                    <ul>
+                        <li id="bullet">Enrolled in year three of the User Experience Design program</li>
+                        <li id="bullet">Dean’s Honour Roll, 2020 — 2021</li>
+                    </ul>
+                    <br />
+                    <br />
+                </section>
+
+                <hr>
+                <br />
+                <br />
+
+                <!-- Eperience Sections -->
+                <section id="digitalconsultants">
+                    <h4>Experience</h4>
+                    <br />
+                    <!-- Digital Consultants -->
+                    <h5>Digital Consultants</h5>
+                    <p>UX Designer & Digital Marketing Specialist</p>
+                    <h6>Brantford, ON</h6>
+                    <h6>February 2021 — Present</h6>
+                    <ul>
+                        <li id="bullet">Designed wire-frames and mock-ups with Figma to improve websites and mobile applications for
+                            clients</li>
+                        <li id="bullet">Analyzed target users and markets to develop digital marketing strategies that helped
+                            businesses
+                            grow online</li>
+                        <li id="bullet">Created custom icons, logos, flyers, posters, and book covers with Adobe Illustrator and
+                            Figma
+                            for business owners</li>
+                        <li id="bullet">Managed social media accounts for clients and designed consistent content that increased
+                            engagement </li>
+                        <li id="bullet">Communicated with clients through virtual meetings to understand their needs and challenges
+                        </li>
+                        <li id="bullet">Maintained websites using a responsive website builder</li>
+                        <li id="bullet">Analyzed website traffic data and social media engagement to create monthly reports to
+                            present
+                            to clients</li>
+                    </ul>
+                    <br />
+                </section>
+
+                <!-- UXDSA -->
+                <section id="UXDSA">
+                    <h5>UXDSA (User Experience Design Student Association)</h5>
+                    <p>Content Creator</p>
+                    <h6>Brantford, ON</h6>
+                    <h6>April 2021 — Present</h6>
+                    <ul>
+                        <li id="bullet">Designed content for social media platforms to educate students about upcoming events</li>
+                        <li id="bullet">Participated in team meetings and assisted in planning interactive events and activities for
+                            students</li>
+                    </ul>
+                    <br />
+                </section>
+
+                <!-- Fortinos -->
+                <section id="fortinos">
+                    <h5>Fortinos</h5>
+                    <p>Bakery Clerk</p>
+                    <h6>Hamilton, ON</h6>
+                    <h6>May 2017 — August 2020</h6>
+                    <ul>
+                        <li id="bullet">Worked as a team and assisted in training new employees to bake and package store products
+                        </li>
+                        <li id="bullet">Managed time effectively and completed tasks efficiently</li>
+                        <li id="bullet">Engaged with customers by selling products, answering questions,and returning phone calls
+                        </li>
+                    </ul>
+                    <br />
+                    <br />
+                </section>
+
+                <hr>
+                <br />
+                <br />
+
+                <!-- Contact Section -->
+                <section id="contact">
+                    <h4>Contact</h4>
+                    <br />
+                    <h6><b>Email:</b> vand2522@mylaurier.ca</h6>
+                    <h6><b>Phone:</b> 289-914-5167</h6>
+                    <h6><b>Address:</b> 62 Leclaire Street, Hamilton, ON, L9C 5X3</h6>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </section>
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        $('.button-collapse').sideNav({
+            menuWidth: 300, // Default is 300
+            edge: 'left', // Choose the horizontal origin
+            closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+            draggable: true // Choose whether you can drag to open on touch screens
+        });
+    </script>
 </body>
+
+</html>
